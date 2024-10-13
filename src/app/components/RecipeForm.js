@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import useCreateRecipe from "@/hooks/useCreateRecipe";
 import EditRecipeButton from "@/app/components/EditRecipeButton"; 
-import AlertDialog from "@/app/components/AlertDialog"; // Asegúrate de importar el AlertDialog
+import AlertDialog from "@/app/components/AlertDialog";
 
 const RecipeForm = ({ onSuccess, recipeToEdit }) => {
   const [title, setTitle] = useState(recipeToEdit?.title || "");
   const [ingredients, setIngredients] = useState(recipeToEdit?.ingredients || "");
   const [preparation_time, setPreparationTime] = useState(recipeToEdit?.preparation_time || "");
-  const [alertMessage, setAlertMessage] = useState(""); // Estado para el mensaje de alerta
+  const [alertMessage, setAlertMessage] = useState(""); 
 
   const { createRecipe, isLoading: isCreating } = useCreateRecipe();
 
@@ -31,9 +31,9 @@ const RecipeForm = ({ onSuccess, recipeToEdit }) => {
         });
 
         if (response) {
-          setAlertMessage("Receta agregada con éxito"); // Mostrar el mensaje de éxito
+          setAlertMessage("Receta agregada con éxito"); 
         } else {
-          setAlertMessage("Error al agregar la receta"); // Mostrar error
+          setAlertMessage("Error al agregar la receta"); 
         }
       } catch (error) {
         console.error("Error al agregar receta:", error);
@@ -42,10 +42,9 @@ const RecipeForm = ({ onSuccess, recipeToEdit }) => {
     }
   };
 
-  // Función que se llama al cerrar el diálogo
   const handleCloseDialog = () => {
-    setAlertMessage("");  // Ocultar el mensaje
-    window.location.reload();  // Refrescar la página después de cerrar el diálogo
+    setAlertMessage(""); 
+    window.location.reload(); 
   };
 
   return (
@@ -74,18 +73,16 @@ const RecipeForm = ({ onSuccess, recipeToEdit }) => {
         className="p-2 border border-gray-300 rounded"
       />
 
-      {/* Botón de edición solo se muestra si estamos editando */}
       {recipeToEdit && (
         <EditRecipeButton
           recipeToEdit={recipeToEdit}
           title={title}
           ingredients={ingredients}
           preparation_time={preparation_time}
-          onSuccess={setAlertMessage} // Muestra mensaje al editar
+          onSuccess={setAlertMessage} 
         />
       )}
 
-      {/* El botón de crear solo aparece si no estamos editando */}
       {!recipeToEdit && (
         <button
           type="submit"
@@ -96,11 +93,11 @@ const RecipeForm = ({ onSuccess, recipeToEdit }) => {
         </button>
       )}
 
-      {/* AlertDialog se muestra si hay un mensaje de alerta */}
+  
       {alertMessage && (
         <AlertDialog
           message={alertMessage}
-          onClose={handleCloseDialog} // Recarga la página al cerrar
+          onClose={handleCloseDialog} 
         />
       )}
     </form>

@@ -6,7 +6,7 @@ const EditRecipeButton = ({ recipeToEdit, title, ingredients, preparation_time, 
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleEdit = async () => {
-    setErrorMessage(""); // Limpiar mensajes de error previos
+    setErrorMessage(""); 
     try {
       const response = await editRecipe(recipeToEdit.id, {
         title,
@@ -37,7 +37,6 @@ const EditRecipeButton = ({ recipeToEdit, title, ingredients, preparation_time, 
       >
         {isLoading ? "Cargando..." : "Editar Receta"}
       </button>
-      {/* Mostrar error si existe */}
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </>
   );

@@ -5,24 +5,24 @@ import AlertDialog from "./AlertDialog";
 const DeleteRecipeButton = ({ id, onDelete }) => {
   const { deleteRecipe, isLoading } = useDeleteRecipe();
   const [showDialog, setShowDialog] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState(""); // Mensaje vacío por defecto
+  const [dialogMessage, setDialogMessage] = useState(""); 
 
   const handleDelete = async () => {
-    const { success } = await deleteRecipe(id); // Solo usamos success aquí
+    const { success } = await deleteRecipe(id); 
 
     if (success) {
-      setDialogMessage("Receta eliminada exitosamente."); // Mensaje claro
-      onDelete(id); // Pasa el ID de la receta eliminada al padre
+      setDialogMessage("Receta eliminada exitosamente."); 
+      onDelete(id);
     } else {
-      setDialogMessage("Error al eliminar la receta."); // Mensaje de error general
+      setDialogMessage("Error al eliminar la receta.");
     }
 
-    setShowDialog(true); // Muestra el diálogo de éxito o error
+    setShowDialog(true);
   };
 
   const handleClose = () => {
-    setShowDialog(false); // Cierra el diálogo
-    window.location.reload(); // Refresca la página
+    setShowDialog(false); 
+    window.location.reload();
   };
 
   return (

@@ -23,7 +23,6 @@ const RecipeCard = ({
           Editar
         </button>
         <DeleteRecipeButton id={id} onDelete={onDelete} />{" "}
-        {/* Usamos el nuevo componente aquí */}
       </div>
     </div>
   );
