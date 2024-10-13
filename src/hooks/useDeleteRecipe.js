@@ -9,7 +9,7 @@ export default function useDeleteRecipe() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/${id}`, {
+      const response = await fetch(`https://apirecetas-production.up.railway.app/api/recipes/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export default function useCreateRecipe() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:3000/api/recipes', {
+      const response = await fetch('https://apirecetas-production.up.railway.app/api/recipes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
