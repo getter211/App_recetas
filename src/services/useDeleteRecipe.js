@@ -1,4 +1,3 @@
-// src/hooks/useDeleteRecipe.js
 import { useState } from "react";
 
 export default function useDeleteRecipe() {
