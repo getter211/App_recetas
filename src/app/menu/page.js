@@ -5,7 +5,7 @@ import RecipeCard from "../components/RecipeCard";
 import RecipeForm from "../components/RecipeForm";
 import AlertDialog from "../components/AlertDialog";
 import Modal from "../components/Modal";
-import useRecipes from "@/hooks/useRecipe";
+import useRecipes from "@/services/useRecipe";
 
 export default function Menu() {
   const { recipes, loading, error } = useRecipes();

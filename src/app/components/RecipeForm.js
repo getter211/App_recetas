@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useCreateRecipe from "@/hooks/useCreateRecipe";
+import useCreateRecipe from "@/services/useCreateRecipe";
 import EditRecipeButton from "@/app/components/EditRecipeButton"; 
 import AlertDialog from "@/app/components/AlertDialog";
 

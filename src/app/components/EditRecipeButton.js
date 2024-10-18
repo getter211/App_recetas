@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useEditRecipe from "@/hooks/useEditRecipe";
+import useEditRecipe from "@/services/useEditRecipe";
 
 const EditRecipeButton = ({ recipeToEdit, title, ingredients, preparation_time, onSuccess }) => {
   const { editRecipe, isLoading } = useEditRecipe();

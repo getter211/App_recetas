@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useDeleteRecipe from "@/hooks/useDeleteRecipe";
+import useDeleteRecipe from "@/services/useDeleteRecipe";
 import AlertDialog from "./AlertDialog";
 
 const DeleteRecipeButton = ({ id, onDelete }) => {
